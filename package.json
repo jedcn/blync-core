@@ -1,0 +1,25 @@
+{
+  "name": "blync-core",
+  "version": "0.1.0",
+  "description": "Library for interacting with Embrava's Blynclight Standard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jedcn/blync-core.git"
+  },
+  "keywords": [
+    "blync",
+    "api",
+    "embrava",
+    "blynclight"
+  ],
+  "author": "Jed Northridge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jedcn/blync-core/issues"
+  },
+  "homepage": "https://github.com/jedcn/blync-core#readme"
+}
