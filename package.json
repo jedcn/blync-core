@@ -4,6 +4,7 @@
   "description": "Library for interacting with Embrava's Blynclight Standard",
   "main": "index.js",
   "scripts": {
+    "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/jasmine/bin/jasmine.js",
     "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "node-hid": "^0.5.1"
   },
   "devDependencies": {
+    "istanbul": "^0.4.0",
     "jasmine": "^2.3.2"
   }
 }
