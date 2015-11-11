@@ -8,15 +8,13 @@ JavaScript Library for interacting with Embrava's
 ## Usage
 
 ```javascript
-const BlyncCore = require('blync-core');
-
-const blync = new BlyncCore()
+const blyncLight = require('blync-core').findFirstBlyncLight()
 
 // Given that RebeccaPurple is '#663399'
-blync.setColorAsHex({ code: '663399' });
-blync.setColorAsHex({ code: '#663399' });
-blync.setColorAsHex({ red: '66', green: '33', blue: '99' });
-blync.setColorAsDecimal({ red: 102, green: 51, blue: 153 });
+blyncLight.setColorAsHex({ code: '663399' });
+blyncLight.setColorAsHex({ code: '#663399' });
+blyncLight.setColorAsHex({ red: '66', green: '33', blue: '99' });
+blyncLight.setColorAsDecimal({ red: 102, green: 51, blue: 153 });
 
 blync.turnOff();
 ```
