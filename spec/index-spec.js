@@ -1,7 +1,9 @@
-const BlyncCore = require('../index');
+const newBlyncDeviceManager = require('../index');
 
 describe('requiring index.js', function() {
-  it('declares BlyncCore', function() {
-    expect(BlyncCore).toBeDefined();
+  it('returns a new BlyncDeviceManager', function() {
+    expect(newBlyncDeviceManager).toBeDefined();
+    expect(newBlyncDeviceManager.findFirstBlyncLight)
+      .toEqual(jasmine.any(Function));
   })
 });

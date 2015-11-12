@@ -14,7 +14,7 @@ describe('BlyncCommand', function() {
     const redValue = 128;
     const greenValue = 64;
     const blueValue = 32;
-    it('it sets (decimal) red, green, and blue', function() {
+    it('sets (decimal) red, green, and blue', function() {
       const blyncCommand = new BlyncCommand({
         red: redValue,
         green: greenValue,
@@ -29,7 +29,7 @@ describe('BlyncCommand', function() {
     const redHexValue = redValue.toString(16);
     const greenHexValue = greenValue.toString(16);
     const blueHexValue = blueValue.toString(16);
-    it('it sets redHex, greenHex, and blueHex', function() {
+    it('sets redHex, greenHex, and blueHex', function() {
       const blyncCommand = new BlyncCommand({
         redHex: redHexValue,
         greenHex: greenHexValue,
@@ -42,7 +42,7 @@ describe('BlyncCommand', function() {
     });
 
     const rgbHex = redHexValue + greenHexValue + blueHexValue;
-    it('it sets rgbHex', function() {
+    it('sets rgbHex', function() {
       const blyncCommand = new BlyncCommand({
         rgbHex: rgbHex,
       });
@@ -52,7 +52,7 @@ describe('BlyncCommand', function() {
       expect(buffer[3]).toBe(greenValue);
     });
 
-    it('it sets #rgbHex', function() {
+    it('sets #rgbHex', function() {
       const blyncCommand = new BlyncCommand({
         rgbHex: '#' + rgbHex,
       });
