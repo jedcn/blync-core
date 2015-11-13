@@ -15,6 +15,16 @@ describe('BlyncLight', function() {
     spyOn(this.device, 'write');
     this.blyncLight = new BlyncLight(this.device);
   });
+  describe('#setColor', function() {
+    it('writes to the device with the color translation', function() {
+      this.blyncLight.setColor('red');
+      expect(this.device.write).toHaveBeenCalled();
+      const writeArgs = this.device.write.calls.first().args[0];
+      expect(writeArgs[1]).toBe(255);
+      expect(writeArgs[2]).toBe(0);
+      expect(writeArgs[3]).toBe(0);
+    });
+  });
   describe('#setColorAsDecimal', function() {
     it('writes to the device with red, green, and blue', function() {
       this.blyncLight.setColorAsDecimal({

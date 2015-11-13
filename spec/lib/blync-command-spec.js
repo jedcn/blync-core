@@ -44,7 +44,7 @@ describe('BlyncCommand', function() {
     const rgbHex = redHexValue + greenHexValue + blueHexValue;
     it('sets rgbHex', function() {
       const blyncCommand = new BlyncCommand({
-        rgbHex: rgbHex,
+        rgbHex: rgbHex
       });
       const buffer = blyncCommand.getBuffer();
       expect(buffer[1]).toBe(redValue);
@@ -54,7 +54,7 @@ describe('BlyncCommand', function() {
 
     it('sets #rgbHex', function() {
       const blyncCommand = new BlyncCommand({
-        rgbHex: '#' + rgbHex,
+        rgbHex: '#' + rgbHex
       });
       const buffer = blyncCommand.getBuffer();
       expect(buffer[1]).toBe(redValue);
