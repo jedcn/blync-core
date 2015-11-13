@@ -1,6 +1,6 @@
 dependencies:
   pre:
-    - sudo apt-get install libusb-1.0-0-dev
+    - apt-get update; apt-get install libusb-1.0-0-dev
 machine:
   node:
     version: 4.1.0
