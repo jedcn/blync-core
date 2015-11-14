@@ -11,8 +11,14 @@ JavaScript Library for interacting with Embrava's
 const blyncCore = require('blync-core');
 const blyncLight = blyncCore.findFirstBlyncLight();
 
-blyncLight.setColor('#f00');            // Red
-blyncLight.setColor('blue');            // Blue
-blyncLight.setColor('RebeccaPurple');   // Any CSS color
-blyncLight.turnOff()
+// Red for a second, then blue for a second, then off.
+blyncLight.setColor('red')
+  .then(function() {
+    setTimeout(function() {
+      blyncLight.setColor('blue');
+      setTimeout(function() {
+        blyncLight.turnOff();
+      }, 1000);
+    }, 1000);
+  })
 ```
