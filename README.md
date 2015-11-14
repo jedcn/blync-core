@@ -22,3 +22,13 @@ blyncLight.setColor('red')
     }, 1000);
   })
 ```
+
+// Flash blue for 5 seconds
+blyncLight.setColor({
+  color: 'blue',
+  blink: 'slow'
+}).then(function() {
+    setTimeout(function() {
+      blyncLight.turnOff();
+    }, 5000);
+  })
