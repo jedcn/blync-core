@@ -27,7 +27,7 @@ blyncLight.setColor('#f00'); // Red
 ```
 
 ```javascript
-blyncLight.setColor('00f'); // Blue
+blyncLight.setColor('00f'); // Blue (you can leave off the #)
 ```
 
 You can also pass an object to `setColor` if you would like to make it
