@@ -12,3 +12,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Nothing yet.
 ### Removed
 - Nothing yet.
+
+## [0.1.0] - 2015-11-15
+
+Initial release.
+
+[Unreleased]: https://github.com/jedcn/blync-core/compare/v0.1.0...HEAD
