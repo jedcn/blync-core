@@ -19,7 +19,7 @@ function runTheseTests() {
           product: 'Blynclight',
           release: 256,
           interface: -1 }])
-        blyncLightSpy = jasmine.createSpy();
+        const blyncLightSpy = jasmine.createSpy();
         spyOn(HID, 'HID').and.returnValue(blyncLightSpy);
         const blyncLight = manager.findFirstBlyncLight();
         expect(HID.devices).toHaveBeenCalled();
@@ -28,7 +28,6 @@ function runTheseTests() {
       });
     });
   });
-
 }
 
 if (SHOULD_RUN_HID_TESTS) {
