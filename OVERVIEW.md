@@ -36,7 +36,9 @@ Start local development by cloning the repository and running:
 * `npm test`
 
 Code should adhere to project coding standards. These can be verified
-and enforced with: `npm run lint`.
+and enforced with:
+
+* `npm run lint`
 
 ## Tests
 
@@ -47,10 +49,13 @@ They are also run as part of a Continuous Integration system. However,
 default containers in both circle and travis cannot pass if
 `require('node-hid')` is run during the tests.
 
-To work around this, the tests have been modified to *not*
-`require('node-hid')` if an environment variable is set as follows:
+To work around this, the the testing infrastructure has been modified
+to *not* run tests that `require('node-hid')` if an environment
+variable is set as follows:
 
-    SHOULD_RUN_HID_TESTS=false
+```shell
+SHOULD_RUN_HID_TESTS=false
+```
 
 The `blync-core` project in both circle and travis has been configured
 to use this environment variable with this value.
@@ -63,7 +68,9 @@ and it is hard to predict when ci builds will fail.
 To simulate the limitations of the ci build (ie: being unable to
 `require('node-hid')` you can do:
 
-    rm -rf node_modules/node-hid && npm test
+```shell
+rm -rf node_modules/node-hid && npm test
+```
 
 Some tests will fail if you do this, and you will see them fail with
 an error message like:
@@ -80,10 +87,12 @@ Or (circle-ci):
     cannot initialize hidapi (hid_init failed)
     Aborted (core dumped)
 
-However, if you properly set the environment variable the tests should
-be able to run even without having `node-hid` installed:
+However, if you set the environment variable to `false` then the test
+suite should be able to run even without having `node-hid` installed:
 
-    rm -rf node_modules/node-hid && SHOULD_RUN_HID_TESTS=false npm test
+```shell
+rm -rf node_modules/node-hid && SHOULD_RUN_HID_TESTS=false npm test
+```
 
 Even though `node-hid` is vital to the functioning of this library,
 the majority of code does not use it, and so you can still get a
