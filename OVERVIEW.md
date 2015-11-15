@@ -7,6 +7,54 @@ This Blynclight can only be set to a color and it has limited blinking
 capability. It cannot change its brightness level, nor does it provide
 true fidelity for RGB colors.
 
+If you have a single Blynclight plugged in, you can get access to it
+as follows:
+
+```javascript
+const blyncCore = require('blync-core');
+const blyncLight = blyncCore.findFirstBlyncLight();
+```
+
+You can change color by invoking `setColor` and passing in a css color
+name or a hex value:
+
+```javascript
+blyncLight.setColor('magenta');
+```
+
+```javascript
+blyncLight.setColor('#f00'); // Red
+```
+
+```javascript
+blyncLight.setColor('00f'); // Blue
+```
+
+You can also pass an object to `setColor` if you would like to make it
+blink:
+
+```javascript
+blyncLight.setColor({
+  color: 'RebeccaPurple',
+  blink: 'slow'
+});
+```
+
+`setColor` is synchronous, but it returns a promise, and so you can
+`.then()` after it.
+
+When you are done, you can turn off the light:
+
+```javascript
+blyncLight.turnOff();
+```
+
+And this is equivalent to changing to the color black:
+
+```javascript
+blyncLight.setColor('000'); // Also turns off
+```
+
 ## Supported Lights
 
 This project was built to support the following setup:
