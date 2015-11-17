@@ -7,12 +7,28 @@ JavaScript Library for interacting with Embrava's
 
 ## Usage
 
+Get a reference to the BlyncLight attached to your computer:
+
 ```javascript
 const blyncCore = require('blync-core');
 const blyncLight = blyncCore.findAllBlyncLights()[0];
+```
 
+The `blyncLight` reference above has a method named `setColor`.
+
+This method works with values like `#f00` or `#ff00cc` or with CSS
+color names like `indigo` or `MediumSeaGreen`.
+
+```javascript
+blyncLight.setColor('indigo);
+```
+
+The `setColor` function returns a promise, and so you can call `then()`
+on the result:
+
+```javascript
 // Red for a second, then blue for a second, then off.
-blyncLight.setColor('red')
+blyncLight.setColor('red');
   .then(function() {
     setTimeout(function() {
       blyncLight.setColor('blue');
@@ -21,16 +37,23 @@ blyncLight.setColor('red')
       }, 1000);
     }, 1000);
   })
+```
 
+The BlyncLight has a built in "blink" capability, and you can provide
+values of `none`, `slow`, or `fast` when setting a color:
+
+```javascript
 // Flash blue for 5 seconds
 blyncLight.setColor({
   color: 'blue',
   blink: 'slow'
-}).then(function() {
-    setTimeout(function() {
-      blyncLight.turnOff();
-    }, 5000);
-  })
+});
+```
+
+When you are done, you can turn it off:
+
+```javascript
+blyncLight.turnOff();
 ```
 
 ## Further Reading
