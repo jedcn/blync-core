@@ -75,6 +75,16 @@ function runTheseTests() {
         expect(lights.length).toBe(2);
       });
     });
+    describe('_blyncLightDevices', function() {
+      it('returns devices sorted by ascending path', function() {
+        const manager = new BlyncLightManager()
+        spyOn(HID, 'devices').and.returnValue(hidDevices.twoLightsOneKeyboard)
+        const devices = manager._blyncLightDevices();
+        expect(devices.length).toBe(2);
+        expect(devices[0].path).toBe('USB_0e53_2516_14100000');
+        expect(devices[1].path).toBe('USB_0e53_2516_14200000');
+      });
+    });
   });
 }
 
