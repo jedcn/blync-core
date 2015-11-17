@@ -20,7 +20,7 @@ This method works with values like `#f00` or `#ff00cc` or with CSS
 color names like `indigo` or `MediumSeaGreen`.
 
 ```javascript
-blyncLight.setColor('indigo);
+blyncLight.setColor('indigo');
 ```
 
 The `setColor` function returns a promise, and so you can call `then()`
