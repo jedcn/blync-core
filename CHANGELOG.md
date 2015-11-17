@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- Nothing yet.
+- BlyncLightManager#findAllBlyncLights() has been added created.
 
 ### Changed
 - Nothing yet.
@@ -15,7 +15,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Nothing yet.
 
 ### Removed
-- Nothing yet.
+- BlyncLightManager#findfirstBlyncLight has been removed. You can now
+  access it with findAllBlyncLights[0].
 
 ## [0.1.0] - 2015-11-15
 

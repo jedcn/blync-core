@@ -12,7 +12,7 @@ as follows:
 
 ```javascript
 const blyncCore = require('blync-core');
-const blyncLight = blyncCore.findFirstBlyncLight();
+const blyncLight = blyncCore.findAllBlyncLights()[0];
 ```
 
 You can change color by invoking `setColor` and passing in a css color

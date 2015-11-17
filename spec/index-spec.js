@@ -4,7 +4,7 @@ function runTheseTests() {
   describe('requiring index.js', function() {
     it('returns a new BlyncDeviceManager', function() {
       expect(newBlyncDeviceManager).toBeDefined();
-      expect(newBlyncDeviceManager.findFirstBlyncLight)
+      expect(newBlyncDeviceManager.findAllBlyncLights)
         .toEqual(jasmine.any(Function));
     })
   });

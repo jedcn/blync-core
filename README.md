@@ -9,7 +9,7 @@ JavaScript Library for interacting with Embrava's
 
 ```javascript
 const blyncCore = require('blync-core');
-const blyncLight = blyncCore.findFirstBlyncLight();
+const blyncLight = blyncCore.findAllBlyncLights()[0];
 
 // Red for a second, then blue for a second, then off.
 blyncLight.setColor('red')
