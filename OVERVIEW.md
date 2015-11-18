@@ -30,6 +30,12 @@ blyncLight.setColor('#f00'); // Red
 blyncLight.setColor('00f'); // Blue (you can leave off the #)
 ```
 
+You can also pass in an array filled with three RGB values:
+
+```javascript
+blyncLight.setColor([255, 0, 0]); // Red
+```
+
 You can also pass an object to `setColor` if you would like to make it
 blink:
 
