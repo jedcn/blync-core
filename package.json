@@ -33,7 +33,7 @@
     "istanbul": "^0.4.0",
     "jasmine": "^2.3.2"
   },
-  "engines" : {
-    "node" : ">=4"
+  "engines": {
+    "node": ">=4"
   }
 }
