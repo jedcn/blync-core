@@ -29,4 +29,12 @@ describe('parseSetColorArgs', function() {
       expect(result.blink).toBe('slow');
     });
   });
+  describe('when invoked with an array', function() {
+    it('presumes the array contains 3 rgb decimals', function() {
+      const result = parseSetColorArgs([[128, 64, 32]]);
+      expect(result.red).toBe(128);
+      expect(result.green).toBe(64);
+      expect(result.blue).toBe(32);
+    });
+  });
 });

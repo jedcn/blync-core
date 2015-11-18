@@ -100,6 +100,17 @@ describe('BlyncLight', function() {
         done();
       });
     });
+    describe('when invoked with an arry', function() {
+      it('recognizes 3 decimal values and writes the rgb', function(done) {
+        this.blyncLight.setColor([ 128, 64, 32 ]);
+        expect(this.device.write).toHaveBeenCalled();
+        const writeArgs = this.device.write.calls.first().args[0];
+        expect(writeArgs[1]).toBe(128);
+        expect(writeArgs[2]).toBe(32);
+        expect(writeArgs[3]).toBe(64);
+        done();
+      });
+    });
   });
   describe('#turnOff', function() {
     it('writes to the device with 0, 0, 0', function(done) {

@@ -9,7 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - `BlyncLightManager#findAllBlyncLights()` has been added created.
 
 ### Changed
-- Nothing yet.
+
+- `BlyncLight#setColor` can now take an Array. The array is presumed
+  to contain three decimal RGB values, for example, to set red you
+  pass: `setColor([255, 0, 0])`
 
 ### Fixed
 - Nothing yet.
